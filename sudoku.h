@@ -82,7 +82,59 @@ void check_column(int j){
     } 
 }
 
-void check_box(){
- 
+void check_box(int boxno){
+    int arr[9] = { 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    int cc = 0;
+    int i = boxno/3 *3;
+    int j = (boxno%3)*3;
+
+        for (int crow = 0; crow <= 2; crow++){ //for each row in the box
+            for (int ccol = 0; ccol <= 2; ccol++){ //for each column in the box
+                for (int c= 0; c <= 8; c++){
+                    if (puzzle[i+crow][j+ccol] == 0){ //0 represents empty box, should not be tested
+                    break;
+                }
+                else if (puzzle[i+crow][j+ccol] != arr[c]){ //Current value doesnt already exist in array
+                    printf("Test: arr[%d] entry %d is valid\n", c, puzzle[i+crow][j+ccol]);
+                }
+                else{ //number was already in the row
+
+                    printf("There are multiple %d's in box %d\n",puzzle[i+crow][j+ccol], boxno);
+                    return; //Ends loop if an issue is found
+                }
+            } 
+              printf("Entry %d is valid\n\n", puzzle[i+crow][j+ccol]);
+                arr[cc] = puzzle[i+crow][j+ccol];
+                cc++;  
+        }           
+    } 
+
 }
 
+
+
+
+
+
+/*
+        for (int crow = 0; crow <= 2; crow++){ //for each row in the box
+            for (int ccol = 0; ccol <= 2; ccol++){ //for each column in the box
+                for (int c= 0; c <= 8; c++){
+                    if (puzzle[i][j] == 0){ //0 represents empty box, should not be tested
+                    break;
+                }
+                else if (puzzle[i][j] != arr[c]){ //Current value doesnt already exist in array
+                    printf("Test: arr[%d] entry %d is valid\n", c, puzzle[i][j]);
+                }
+                else{ //number was already in the row
+
+                    printf("There are multiple %d's in box %d\n",puzzle[i][j], boxno);
+                    return; //Ends loop if an issue is found
+                }
+            } 
+              printf("Entry %d is valid\n\n", puzzle[i][j]);
+                arr[cc] = puzzle[i][j];
+                cc++;  
+        } i++;            
+    } 
+*/

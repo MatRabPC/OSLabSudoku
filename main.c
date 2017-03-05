@@ -4,8 +4,7 @@
     int main (){
         initialize_puzzle(); //converts puzzle to 2d array
         show_array_test(); //test that array has been properly processed
-        check_row(7); //validate numbers in row
-        check_column(0); //validate numbers in column
+        check_box(2); //boxes are numbered 0-8 
     
     //Check lines
 
