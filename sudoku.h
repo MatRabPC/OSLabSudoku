@@ -1,9 +1,6 @@
 /*
-Improvements 
-- check_row() and check_column() save 0s, more efficient if they were not stored in array
-- more effiecient if check_row() and check_column() just go through row or column instead of saving to an array 
-
-- check_box() needs to be completed
+SOFE 3950 Lab Group 12
+Matthew Rabski & Samina Rahmanyar
 */
 
 #include <stdio.h>
