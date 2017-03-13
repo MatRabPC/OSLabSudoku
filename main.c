@@ -1,3 +1,8 @@
+/*
+SOFE 3950 Lab Group 12
+Matthew Rabski & Samina Rahmanyar
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
